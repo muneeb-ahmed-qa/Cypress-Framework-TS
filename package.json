@@ -78,6 +78,16 @@
     "url": "https://github.com/your-username/cypress-advanced-framework/issues"
   },
   "homepage": "https://github.com/your-username/cypress-advanced-framework#readme",
+  "files": [
+    "cypress/",
+    "scripts/",
+    "docs/",
+    "*.json",
+    "*.ts",
+    "*.js",
+    "LICENSE",
+    "README.md"
+  ],
   "devDependencies": {
     "@cypress/code-coverage": "^3.12.11",
     "@types/cypress": "^1.1.3",
