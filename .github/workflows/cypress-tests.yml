@@ -1,0 +1,178 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        # Run tests in Chrome and Firefox
+        browser: [chrome, firefox]
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: ${{ matrix.browser }}
+          headless: true
+          reporter: cypress-multi-reporters
+          reporter-options: configFile=cypress/reports/ci-reporter.json
+          record: false
+          parallel: false
+          group: 'Cypress Tests - ${{ matrix.browser }}'
+          spec: 'cypress/e2e/**/*.spec.ts'
+          config-file: cypress.config.ts
+          env: |
+            CYPRESS_TAGS=smoke,regression
+            CYPRESS_EXCLUDE_TAGS=flaky,slow
+
+      - name: Upload HTML reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-html-reports-${{ matrix.browser }}
+          path: cypress/reports/html/
+          retention-days: 30
+
+      - name: Upload JUnit reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-junit-reports-${{ matrix.browser }}
+          path: cypress/reports/junit/
+          retention-days: 30
+
+      - name: Publish JUnit results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Cypress Tests (${{ matrix.browser }})
+          path: cypress/reports/junit/*.xml
+          reporter: java-junit
+          fail-on-error: true
+
+  cypress-smoke:
+    runs-on: ubuntu-latest
+    needs: cypress-run
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Smoke Tests
+        run: npm run test:smoke
+        env:
+          CYPRESS_TAGS: smoke,critical
+
+      - name: Upload Smoke Test Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-smoke-reports
+          path: cypress/reports/
+          retention-days: 7
+
+  cypress-api:
+    runs-on: ubuntu-latest
+    needs: cypress-run
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run API Tests
+        run: npm run test:api
+        env:
+          CYPRESS_TAGS: api,backend
+
+      - name: Upload API Test Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-api-reports
+          path: cypress/reports/
+          retention-days: 7
+
+  report-summary:
+    runs-on: ubuntu-latest
+    needs: [cypress-run, cypress-smoke, cypress-api]
+    if: always()
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Generate Report Summary
+        run: |
+          echo "# Test Report Summary" > report-summary.md
+          echo "" >> report-summary.md
+          echo "## Test Results" >> report-summary.md
+          echo "" >> report-summary.md
+          echo "| Browser | Status | Reports |" >> report-summary.md
+          echo "|---------|--------|---------|" >> report-summary.md
+          
+          # Check for HTML reports
+          if [ -d "cypress-html-reports-chrome" ]; then
+            echo "| Chrome | ✅ Passed | [HTML Report](cypress-html-reports-chrome/) |" >> report-summary.md
+          else
+            echo "| Chrome | ❌ Failed | No reports |" >> report-summary.md
+          fi
+          
+          if [ -d "cypress-html-reports-firefox" ]; then
+            echo "| Firefox | ✅ Passed | [HTML Report](cypress-html-reports-firefox/) |" >> report-summary.md
+          else
+            echo "| Firefox | ❌ Failed | No reports |" >> report-summary.md
+          fi
+          
+          echo "" >> report-summary.md
+          echo "## JUnit XML Reports" >> report-summary.md
+          echo "" >> report-summary.md
+          echo "JUnit XML reports are available for CI/CD integration and test result tracking." >> report-summary.md
+          
+          cat report-summary.md
+
+      - name: Upload Report Summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-summary
+          path: report-summary.md
+          retention-days: 30

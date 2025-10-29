@@ -1,0 +1,158 @@
+{
+  "schema": {
+    "id": "number",
+    "name": "string",
+    "description": "text",
+    "price": "number",
+    "currency": "string",
+    "category": "enum",
+    "brand": "string",
+    "sku": "string",
+    "inStock": "boolean",
+    "quantity": "number",
+    "weight": "number",
+    "dimensions": {
+      "length": "number",
+      "width": "number",
+      "height": "number",
+      "unit": "string"
+    },
+    "images": "array",
+    "tags": "array",
+    "rating": "number",
+    "reviews": "number",
+    "features": "array",
+    "specifications": "object",
+    "availability": "enum",
+    "shipping": {
+      "free": "boolean",
+      "cost": "number",
+      "time": "string"
+    },
+    "createdAt": "datetime",
+    "updatedAt": "datetime"
+  },
+  "constraints": {
+    "id": {
+      "min": 1,
+      "max": 999999
+    },
+    "price": {
+      "min": 0.01,
+      "max": 10000,
+      "decimal": 2
+    },
+    "quantity": {
+      "min": 0,
+      "max": 10000
+    },
+    "weight": {
+      "min": 0.1,
+      "max": 1000,
+      "decimal": 2
+    },
+    "rating": {
+      "min": 1,
+      "max": 5,
+      "decimal": 1
+    },
+    "reviews": {
+      "min": 0,
+      "max": 10000
+    }
+  },
+  "enums": {
+    "category": [
+      "Electronics", "Clothing", "Books", "Home & Garden", "Sports", "Beauty",
+      "Toys", "Automotive", "Health", "Food", "Office", "Jewelry", "Shoes",
+      "Bags", "Watches", "Furniture", "Appliances", "Tools", "Pet Supplies",
+      "Baby", "Garden", "Outdoor", "Musical Instruments", "Art & Crafts",
+      "Travel", "Gaming", "Photography", "Fitness", "Kitchen", "Bathroom"
+    ],
+    "availability": ["in-stock", "out-of-stock", "pre-order", "discontinued"],
+    "currency": ["USD", "EUR", "GBP", "CAD", "AUD", "JPY", "CHF", "SEK", "NOK", "DKK"]
+  },
+  "data": {
+    "name": [
+      "Wireless Bluetooth Headphones", "Smart Fitness Tracker", "Organic Cotton T-Shirt",
+      "Professional Camera Lens", "Ergonomic Office Chair", "Stainless Steel Water Bottle",
+      "LED Desk Lamp", "Wireless Charging Pad", "Bluetooth Speaker", "Gaming Mechanical Keyboard",
+      "Portable Power Bank", "Smart Home Hub", "Wireless Mouse", "USB-C Hub", "Laptop Stand",
+      "Phone Case", "Screen Protector", "Cable Organizer", "Desk Mat", "Monitor Arm",
+      "Webcam", "Microphone", "Headset", "Gaming Mouse Pad", "RGB Strip Lights",
+      "Smart Bulb", "Doorbell Camera", "Security Camera", "Smart Lock", "Thermostat",
+      "Air Purifier", "Humidifier", "Robot Vacuum", "Smart Scale", "Fitness Band",
+      "Smart Watch", "Tablet Stand", "Laptop Sleeve", "Backpack", "Travel Adapter",
+      "Car Phone Mount", "Dashboard Camera", "Bluetooth Car Kit", "Phone Mount",
+      "Cup Holder", "Seat Cover", "Floor Mat", "Steering Wheel Cover", "Air Freshener",
+      "Tire Pressure Gauge", "Jump Starter", "Car Charger", "FM Transmitter", "GPS Tracker"
+    ],
+    "brand": [
+      "Apple", "Samsung", "Sony", "Bose", "JBL", "Logitech", "Razer", "Corsair",
+      "SteelSeries", "HyperX", "ASUS", "Dell", "HP", "Lenovo", "Microsoft",
+      "Google", "Amazon", "Nintendo", "PlayStation", "Xbox", "Nike", "Adidas",
+      "Puma", "Under Armour", "Reebok", "New Balance", "Converse", "Vans",
+      "Levi's", "Gap", "H&M", "Zara", "Uniqlo", "Forever 21", "American Eagle",
+      "Hollister", "Abercrombie", "Calvin Klein", "Tommy Hilfiger", "Ralph Lauren",
+      "Polo", "Lacoste", "Hugo Boss", "Armani", "Versace", "Gucci", "Prada",
+      "Louis Vuitton", "Chanel", "Dior", "Hermès", "Burberry", "Coach", "Michael Kors",
+      "Kate Spade", "Tory Burch", "Marc Jacobs", "Stella McCartney", "Alexander Wang"
+    ],
+    "description": [
+      "High-quality product designed for durability and performance. Perfect for everyday use.",
+      "Premium materials and craftsmanship ensure long-lasting satisfaction and reliability.",
+      "Innovative design meets functionality in this must-have product for modern living.",
+      "Cutting-edge technology combined with elegant aesthetics for the discerning customer.",
+      "Professional-grade quality at an affordable price point. Built to last.",
+      "Sleek and modern design that complements any lifestyle or workspace.",
+      "Advanced features and intuitive controls make this product a joy to use.",
+      "Crafted with attention to detail and precision for the ultimate user experience.",
+      "Versatile and adaptable design that fits seamlessly into any environment.",
+      "State-of-the-art engineering meets beautiful design in this exceptional product.",
+      "Reliable performance and elegant styling make this a perfect choice for any user.",
+      "Innovative features and superior build quality set this product apart from the competition.",
+      "Thoughtfully designed with user comfort and convenience in mind.",
+      "Premium construction and materials ensure years of dependable service.",
+      "Modern aesthetics combined with practical functionality for today's lifestyle.",
+      "Professional quality and attention to detail make this product stand out.",
+      "Cutting-edge design meets practical functionality in this outstanding product.",
+      "Superior materials and construction ensure lasting value and satisfaction.",
+      "Innovative technology and elegant design create the perfect user experience.",
+      "Built to the highest standards of quality and performance for demanding users."
+    ],
+    "features": [
+      "Wireless connectivity", "Bluetooth 5.0", "Fast charging", "Water resistant",
+      "Noise cancellation", "Voice control", "App integration", "Customizable settings",
+      "Long battery life", "Quick setup", "Multi-device pairing", "Auto-sync",
+      "Cloud storage", "Real-time updates", "Smart notifications", "Gesture control",
+      "Touch display", "Voice assistant", "GPS tracking", "Heart rate monitor",
+      "Sleep tracking", "Fitness tracking", "Weather resistant", "Shockproof",
+      "Anti-theft", "Remote control", "Timer function", "Auto-shutoff", "LED indicators",
+      "Adjustable settings", "Memory function", "Portable design", "Lightweight",
+      "Ergonomic design", "Easy installation", "Plug and play", "Cross-platform",
+      "Multi-language support", "Regular updates", "Customer support", "Warranty included"
+    ],
+    "tags": [
+      "wireless", "bluetooth", "smart", "portable", "rechargeable", "waterproof",
+      "durable", "lightweight", "compact", "professional", "premium", "affordable",
+      "innovative", "modern", "sleek", "elegant", "versatile", "reliable", "efficient",
+      "user-friendly", "high-quality", "long-lasting", "energy-efficient", "eco-friendly",
+      "stylish", "trendy", "classic", "contemporary", "minimalist", "sophisticated",
+      "practical", "functional", "convenient", "easy-to-use", "intuitive", "advanced",
+      "cutting-edge", "state-of-the-art", "professional-grade", "commercial-grade",
+      "industrial-strength", "heavy-duty", "robust", "sturdy", "solid", "well-built"
+    ],
+    "specifications": {
+      "dimensions": ["Length", "Width", "Height", "Depth", "Diameter"],
+      "weight": ["Weight", "Net Weight", "Gross Weight", "Shipping Weight"],
+      "power": ["Voltage", "Current", "Power", "Battery", "Charging Time"],
+      "connectivity": ["WiFi", "Bluetooth", "USB", "HDMI", "Audio Jack"],
+      "display": ["Screen Size", "Resolution", "Refresh Rate", "Brightness"],
+      "storage": ["Internal Storage", "RAM", "Expandable Storage", "Cloud Storage"],
+      "camera": ["Megapixels", "Aperture", "Zoom", "Video Resolution"],
+      "audio": ["Frequency Response", "Impedance", "Sensitivity", "Driver Size"],
+      "sensors": ["Accelerometer", "Gyroscope", "Magnetometer", "GPS", "Heart Rate"],
+      "compatibility": ["Operating System", "Device Compatibility", "App Requirements"]
+    }
+  }
+}

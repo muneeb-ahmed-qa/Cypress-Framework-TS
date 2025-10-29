@@ -1,0 +1,95 @@
+{
+  "schema": {
+    "id": "string",
+    "customerId": "number",
+    "items": "array",
+    "total": "number",
+    "currency": "string",
+    "status": "enum",
+    "paymentMethod": "enum",
+    "paymentStatus": "enum",
+    "shippingAddress": "object",
+    "billingAddress": "object",
+    "shippingMethod": "enum",
+    "shippingCost": "number",
+    "tax": "number",
+    "discount": "number",
+    "couponCode": "string",
+    "notes": "text",
+    "trackingNumber": "string",
+    "estimatedDelivery": "date",
+    "actualDelivery": "date",
+    "createdAt": "datetime",
+    "updatedAt": "datetime"
+  },
+  "constraints": {
+    "total": {
+      "min": 0.01,
+      "max": 50000,
+      "decimal": 2
+    },
+    "shippingCost": {
+      "min": 0,
+      "max": 1000,
+      "decimal": 2
+    },
+    "tax": {
+      "min": 0,
+      "max": 5000,
+      "decimal": 2
+    },
+    "discount": {
+      "min": 0,
+      "max": 5000,
+      "decimal": 2
+    }
+  },
+  "enums": {
+    "status": [
+      "pending", "confirmed", "processing", "shipped", "delivered", "cancelled", "refunded"
+    ],
+    "paymentMethod": [
+      "credit_card", "debit_card", "paypal", "apple_pay", "google_pay", "bank_transfer", "cash"
+    ],
+    "paymentStatus": [
+      "pending", "paid", "failed", "refunded", "partially_refunded", "cancelled"
+    ],
+    "shippingMethod": [
+      "standard", "express", "overnight", "pickup", "international", "free"
+    ]
+  },
+  "data": {
+    "couponCode": [
+      "SAVE10", "WELCOME20", "SUMMER15", "FREESHIP", "NEWUSER", "LOYALTY25",
+      "HOLIDAY30", "FLASH50", "BULK20", "FIRSTTIME", "MEMBER15", "VIP40",
+      "CLEARANCE", "SALE25", "DEAL30", "SPECIAL20", "OFFER15", "PROMO10",
+      "DISCOUNT35", "SAVINGS20", "BONUS25", "REWARD30", "GIFT15", "BIRTHDAY20"
+    ],
+    "notes": [
+      "Please leave package at front door if no answer",
+      "Deliver to back entrance",
+      "Call before delivery",
+      "Leave with neighbor if not home",
+      "Require signature for delivery",
+      "Fragile - handle with care",
+      "Gift wrapping requested",
+      "Rush delivery needed",
+      "Hold for pickup at store",
+      "Deliver during business hours only",
+      "Leave in mailbox if fits",
+      "Ring doorbell twice",
+      "No delivery on weekends",
+      "Contact customer before delivery",
+      "Special instructions provided separately"
+    ],
+    "trackingNumber": [
+      "1Z999AA1234567890", "1Z999BB2345678901", "1Z999CC3456789012",
+      "1Z999DD4567890123", "1Z999EE5678901234", "1Z999FF6789012345",
+      "1Z999GG7890123456", "1Z999HH8901234567", "1Z999II9012345678",
+      "1Z999JJ0123456789", "9400111206213859496182", "9400111206213859496183",
+      "9400111206213859496184", "9400111206213859496185", "9400111206213859496186",
+      "9400111206213859496187", "9400111206213859496188", "9400111206213859496189",
+      "9400111206213859496190", "9400111206213859496191"
+    ]
+  }
+}

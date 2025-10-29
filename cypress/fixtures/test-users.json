@@ -1,0 +1,107 @@
+[
+  {
+    "id": 758080,
+    "firstName": "Robert",
+    "lastName": "Smith",
+    "email": "robert.smith513@example.com",
+    "phone": "(293) 970-4534",
+    "dateOfBirth": "1995-05-05",
+    "address": {
+      "street": "7919 Main St",
+      "city": "Philadelphia",
+      "state": "Florida",
+      "zipCode": "55951",
+      "country": "United States"
+    },
+    "profile": {
+      "bio": "Passionate about technology and innovation. Love exploring new ideas and creating meaningful solutions.",
+      "avatar": "https://example.com/avatars/JvTEaZv8.jpg",
+      "website": "https://Xcrc6dfeJB.com",
+      "socialMedia": {
+        "twitter": "@robertsmith",
+        "linkedin": "linkedin.com/in/robert-smith",
+        "github": "github.com/robertsmith"
+      }
+    },
+    "preferences": {
+      "theme": "auto",
+      "language": "it",
+      "notifications": true,
+      "newsletter": false
+    },
+    "role": "moderator",
+    "status": "suspended",
+    "createdAt": "2025-07-06T17:28:54.756Z",
+    "updatedAt": "2025-11-19T21:24:17.157Z"
+  },
+  {
+    "id": 899606,
+    "firstName": "Jane",
+    "lastName": "Davis",
+    "email": "jane.davis17@example.com",
+    "phone": "(558) 374-1694",
+    "dateOfBirth": "1989-09-16",
+    "address": {
+      "street": "2723 Elm St",
+      "city": "Chicago",
+      "state": "California",
+      "zipCode": "42673",
+      "country": "Canada"
+    },
+    "profile": {
+      "bio": "Passionate about technology and innovation. Love exploring new ideas and creating meaningful solutions.",
+      "avatar": "https://example.com/avatars/XBI1K5it.jpg",
+      "website": "https://ONjOBG9wE2.com",
+      "socialMedia": {
+        "twitter": "@janedavis",
+        "linkedin": "linkedin.com/in/jane-davis",
+        "github": "github.com/janedavis"
+      }
+    },
+    "preferences": {
+      "theme": "dark",
+      "language": "de",
+      "notifications": true,
+      "newsletter": false
+    },
+    "role": "admin",
+    "status": "suspended",
+    "createdAt": "2025-04-20T21:46:08.771Z",
+    "updatedAt": "2024-11-29T08:53:50.987Z"
+  },
+  {
+    "id": 249373,
+    "firstName": "Robert",
+    "lastName": "Davis",
+    "email": "robert.davis964@example.com",
+    "phone": "(699) 437-5229",
+    "dateOfBirth": "1989-08-29",
+    "address": {
+      "street": "7331 Main St",
+      "city": "Chicago",
+      "state": "Florida",
+      "zipCode": "83374",
+      "country": "Australia"
+    },
+    "profile": {
+      "bio": "Passionate about technology and innovation. Love exploring new ideas and creating meaningful solutions.",
+      "avatar": "https://example.com/avatars/6ygODsoP.jpg",
+      "website": "https://MJkKNDmTje.com",
+      "socialMedia": {
+        "twitter": "@robertdavis",
+        "linkedin": "linkedin.com/in/robert-davis",
+        "github": "github.com/robertdavis"
+      }
+    },
+    "preferences": {
+      "theme": "light",
+      "language": "de",
+      "notifications": false,
+      "newsletter": true
+    },
+    "role": "admin",
+    "status": "suspended",
+    "createdAt": "2025-04-02T17:00:06.116Z",
+    "updatedAt": "2025-06-06T19:16:15.351Z"
+  }
+]

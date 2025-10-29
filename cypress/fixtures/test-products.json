@@ -1,0 +1,100 @@
+[
+  {
+    "id": 899267,
+    "name": "Professional Camera Lens",
+    "description": "High-quality professional camera lens designed for durability and performance. Perfect for everyday use.",
+    "price": 579.22,
+    "currency": "EUR",
+    "category": "Clothing",
+    "brand": "Logitech",
+    "sku": "LOGITECH-JNXDFI",
+    "inStock": true,
+    "quantity": 4,
+    "weight": 1.34,
+    "dimensions": {
+      "length": 15,
+      "width": 8,
+      "height": 42,
+      "unit": "inches"
+    },
+    "images": [
+      "https://example.com/images/DLKHDT8r.jpg",
+      "https://example.com/images/DjvNwdsb.jpg"
+    ],
+    "tags": [
+      "smart",
+      "fitness",
+      "tracking"
+    ],
+    "rating": 3.2,
+    "reviews": 182,
+    "features": [
+      "Wireless connectivity",
+      "Bluetooth 5.0",
+      "Fast charging"
+    ],
+    "specifications": {
+      "Screen Size": "7 inches",
+      "Resolution": "28K",
+      "Battery Life": "9 hours",
+      "Weight": "311g"
+    },
+    "availability": "pre-order",
+    "shipping": {
+      "free": true,
+      "cost": 0,
+      "time": "1-2 days"
+    },
+    "createdAt": "2025-08-23T13:28:11.994Z",
+    "updatedAt": "2025-02-19T20:41:54.822Z"
+  },
+  {
+    "id": 267263,
+    "name": "Organic Cotton T-Shirt",
+    "description": "High-quality organic cotton t-shirt designed for durability and performance. Perfect for everyday use.",
+    "price": 662.38,
+    "currency": "USD",
+    "category": "Sports",
+    "brand": "Apple",
+    "sku": "APPLE-NGBH41",
+    "inStock": true,
+    "quantity": 86,
+    "weight": 2.88,
+    "dimensions": {
+      "length": 13,
+      "width": 9,
+      "height": 36,
+      "unit": "inches"
+    },
+    "images": [
+      "https://example.com/images/pmw0RZD4.jpg",
+      "https://example.com/images/5xHPm0gu.jpg"
+    ],
+    "tags": [
+      "organic",
+      "cotton",
+      "sustainable"
+    ],
+    "rating": 5,
+    "reviews": 938,
+    "features": [
+      "Wireless connectivity",
+      "Bluetooth 5.0",
+      "Fast charging"
+    ],
+    "specifications": {
+      "Screen Size": "5 inches",
+      "Resolution": "561K",
+      "Battery Life": "12 hours",
+      "Weight": "152g"
+    },
+    "availability": "discontinued",
+    "shipping": {
+      "free": true,
+      "cost": 18.84,
+      "time": "1 week"
+    },
+    "createdAt": "2025-07-07T15:16:34.411Z",
+    "updatedAt": "2025-03-19T20:24:37.986Z"
+  }
+]

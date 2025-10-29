@@ -1,0 +1,27 @@
+{
+  "ui": {
+    "testEmails": [
+      "test1@example.com",
+      "test2@example.com",
+      "test3@example.com"
+    ],
+    "testMessages": [
+      "This is test message 1",
+      "This is test message 2",
+      "This is test message 3"
+    ]
+  },
+  "formData": {
+    "validForm": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "message": "This is a test message"
+    },
+    "invalidForm": {
+      "name": "",
+      "email": "invalid-email",
+      "message": ""
+    }
+  }
+}
+

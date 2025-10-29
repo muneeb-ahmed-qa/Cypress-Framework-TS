@@ -1,0 +1,33 @@
+{
+  "note": "This file contains user data without passwords. Passwords are encrypted and stored in environment variables.",
+  "users": [
+    {
+      "id": 1,
+      "username": "admin@example.com",
+      "role": "admin",
+      "permissions": ["read", "write", "delete", "admin"]
+    },
+    {
+      "id": 2,
+      "username": "user@example.com",
+      "role": "user",
+      "permissions": ["read", "write"]
+    },
+    {
+      "id": 3,
+      "username": "test@example.com",
+      "role": "user",
+      "permissions": ["read"]
+    }
+  ],
+  "roles": {
+    "admin": {
+      "description": "Administrator with full access",
+      "permissions": ["read", "write", "delete", "admin"]
+    },
+    "user": {
+      "description": "Regular user with limited access",
+      "permissions": ["read", "write"]
+    }
+  }
+}

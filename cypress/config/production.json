@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://example.cypress.io",
+  "apiUrl": "https://jsonplaceholder.typicode.com",
+  "environment": "production",
+  "timeouts": {
+    "default": 15000,
+    "pageLoad": 45000
+  }
+}
+

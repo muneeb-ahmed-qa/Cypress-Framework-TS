@@ -1,0 +1,18 @@
+{
+  "admin": {
+    "username": "admin@example.com",
+    "role": "admin",
+    "note": "Password stored encrypted in environment variables"
+  },
+  "regularUser": {
+    "username": "user@example.com",
+    "role": "user",
+    "note": "Password stored encrypted in environment variables"
+  },
+  "testUser": {
+    "username": "test@example.com",
+    "role": "user",
+    "note": "Password stored encrypted in environment variables"
+  }
+}
+

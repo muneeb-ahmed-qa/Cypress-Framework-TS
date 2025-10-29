@@ -1,0 +1,63 @@
+name: Nightly Cypress Tests
+
+on:
+  schedule:
+    # Run every day at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  nightly-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run all Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          browser: chrome
+          headless: true
+          parallel: true
+          group: 'Nightly Tests'
+          start: npm start
+          wait-on: 'http://localhost:3000'
+      
+      - name: Generate Test Report
+        if: always()
+        run: |
+          npm run merge:reports || true
+          npm run generate:report || true
+      
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: nightly-test-report
+          path: cypress/reports/html
+          retention-days: 7
+      
+      - name: Notify on Failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Nightly Tests Failed',
+              body: 'The nightly Cypress tests have failed. Please check the test report.',
+              labels: ['bug', 'test-failure']
+            });
+

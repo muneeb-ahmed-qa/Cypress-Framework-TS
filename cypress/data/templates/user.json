@@ -1,0 +1,167 @@
+{
+  "schema": {
+    "id": "number",
+    "firstName": "string",
+    "lastName": "string",
+    "email": "email",
+    "phone": "phone",
+    "dateOfBirth": "date",
+    "address": {
+      "street": "string",
+      "city": "string",
+      "state": "string",
+      "zipCode": "string",
+      "country": "string"
+    },
+    "profile": {
+      "bio": "text",
+      "avatar": "url",
+      "website": "url",
+      "socialMedia": {
+        "twitter": "string",
+        "linkedin": "string",
+        "github": "string"
+      }
+    },
+    "preferences": {
+      "theme": "enum",
+      "language": "enum",
+      "notifications": "boolean",
+      "newsletter": "boolean"
+    },
+    "role": "enum",
+    "status": "enum",
+    "createdAt": "datetime",
+    "updatedAt": "datetime"
+  },
+  "constraints": {
+    "id": {
+      "min": 1,
+      "max": 999999
+    },
+    "firstName": {
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "lastName": {
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "dateOfBirth": {
+      "minAge": 18,
+      "maxAge": 100
+    },
+    "phone": {
+      "format": "us"
+    }
+  },
+  "enums": {
+    "theme": ["light", "dark", "auto"],
+    "language": ["en", "es", "fr", "de", "it"],
+    "role": ["admin", "user", "moderator", "guest"],
+    "status": ["active", "inactive", "pending", "suspended"]
+  },
+  "data": {
+    "firstName": [
+      "John", "Jane", "Michael", "Sarah", "David", "Emily", "Robert", "Jessica",
+      "William", "Ashley", "James", "Amanda", "Christopher", "Jennifer", "Daniel",
+      "Lisa", "Matthew", "Nancy", "Anthony", "Karen", "Mark", "Helen", "Donald",
+      "Sandra", "Steven", "Donna", "Paul", "Carol", "Andrew", "Ruth", "Joshua",
+      "Sharon", "Kenneth", "Michelle", "Kevin", "Laura", "Brian", "Sarah",
+      "George", "Kimberly", "Timothy", "Deborah", "Ronald", "Dorothy", "Jason",
+      "Lisa", "Edward", "Nancy", "Jeffrey", "Karen", "Ryan", "Betty", "Jacob",
+      "Helen", "Gary", "Sandra", "Nicholas", "Donna", "Eric", "Carol", "Jonathan",
+      "Ruth", "Stephen", "Sharon", "Larry", "Michelle", "Justin", "Laura",
+      "Scott", "Sarah", "Brandon", "Kimberly", "Benjamin", "Deborah", "Samuel",
+      "Dorothy", "Gregory", "Lisa", "Alexander", "Nancy", "Patrick", "Karen",
+      "Jack", "Betty", "Dennis", "Helen", "Jerry", "Sandra", "Tyler", "Donna",
+      "Aaron", "Carol", "Jose", "Ruth", "Henry", "Sharon", "Adam", "Michelle",
+      "Douglas", "Laura", "Nathan", "Sarah", "Peter", "Kimberly", "Zachary",
+      "Deborah", "Kyle", "Dorothy", "Noah", "Lisa", "Alan", "Nancy", "Jeremy",
+      "Karen", "Ethan", "Betty", "Hunter", "Helen", "Mason", "Sandra", "Liam",
+      "Donna", "Jacob", "Carol", "William", "Ruth", "Ethan", "Sharon", "Michael",
+      "Michelle", "Alexander", "Laura", "James", "Sarah", "Benjamin", "Kimberly",
+      "Daniel", "Deborah", "Matthew", "Dorothy", "Samuel", "Lisa", "David",
+      "Nancy", "Joseph", "Karen", "Jackson", "Betty", "Sebastian", "Helen",
+      "Jack", "Sandra", "Owen", "Donna", "Theodore", "Carol", "Aiden", "Ruth",
+      "Samuel", "Sharon", "Joseph", "Michelle", "John", "Laura", "David", "Sarah"
+    ],
+    "lastName": [
+      "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller",
+      "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez",
+      "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin",
+      "Lee", "Perez", "Thompson", "White", "Harris", "Sanchez", "Clark",
+      "Ramirez", "Lewis", "Robinson", "Walker", "Young", "Allen", "King",
+      "Wright", "Scott", "Torres", "Nguyen", "Hill", "Flores", "Green",
+      "Adams", "Nelson", "Baker", "Hall", "Rivera", "Campbell", "Mitchell",
+      "Carter", "Roberts", "Gomez", "Phillips", "Evans", "Turner", "Diaz",
+      "Parker", "Cruz", "Edwards", "Collins", "Reyes", "Stewart", "Morris",
+      "Morales", "Murphy", "Cook", "Rogers", "Gutierrez", "Ortiz", "Morgan",
+      "Cooper", "Peterson", "Bailey", "Reed", "Kelly", "Howard", "Ramos",
+      "Kim", "Cox", "Ward", "Richardson", "Watson", "Brooks", "Chavez",
+      "Wood", "James", "Bennett", "Gray", "Mendoza", "Ruiz", "Hughes",
+      "Price", "Alvarez", "Castillo", "Sanders", "Patel", "Myers", "Long",
+      "Ross", "Foster", "Jimenez"
+    ],
+    "city": [
+      "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia",
+      "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville",
+      "Fort Worth", "Columbus", "Charlotte", "San Francisco", "Indianapolis",
+      "Seattle", "Denver", "Washington", "Boston", "El Paso", "Nashville",
+      "Detroit", "Oklahoma City", "Portland", "Las Vegas", "Memphis", "Louisville",
+      "Baltimore", "Milwaukee", "Albuquerque", "Tucson", "Fresno", "Sacramento",
+      "Mesa", "Kansas City", "Atlanta", "Long Beach", "Colorado Springs", "Raleigh",
+      "Miami", "Virginia Beach", "Omaha", "Oakland", "Minneapolis", "Tulsa",
+      "Arlington", "Tampa", "New Orleans", "Wichita", "Cleveland", "Bakersfield",
+      "Aurora", "Anaheim", "Honolulu", "Santa Ana", "Corpus Christi", "Riverside",
+      "Lexington", "Stockton", "Henderson", "Saint Paul", "St. Louis", "Milwaukee",
+      "Columbus", "Austin", "Fort Worth", "Charlotte", "Seattle", "Denver",
+      "El Paso", "Detroit", "Nashville", "Portland", "Memphis", "Oklahoma City",
+      "Las Vegas", "Louisville", "Baltimore", "Milwaukee", "Albuquerque",
+      "Tucson", "Fresno", "Sacramento", "Mesa", "Kansas City", "Atlanta",
+      "Long Beach", "Colorado Springs", "Raleigh", "Miami", "Virginia Beach",
+      "Omaha", "Oakland", "Minneapolis", "Tulsa", "Arlington", "Tampa"
+    ],
+    "state": [
+      "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
+      "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho",
+      "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
+      "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+      "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey",
+      "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+      "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+      "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+      "Washington", "West Virginia", "Wisconsin", "Wyoming"
+    ],
+    "country": [
+      "United States", "Canada", "United Kingdom", "Australia", "Germany",
+      "France", "Italy", "Spain", "Netherlands", "Sweden", "Norway", "Denmark",
+      "Finland", "Switzerland", "Austria", "Belgium", "Ireland", "Portugal",
+      "Japan", "South Korea", "China", "India", "Brazil", "Mexico", "Argentina",
+      "Chile", "Colombia", "Peru", "Venezuela", "Ecuador", "Uruguay", "Paraguay",
+      "Bolivia", "Guyana", "Suriname", "French Guiana"
+    ],
+    "bio": [
+      "Passionate about technology and innovation. Love exploring new ideas and creating meaningful solutions.",
+      "Creative professional with a background in design and development. Always learning and growing.",
+      "Entrepreneur and business enthusiast. Focused on building sustainable and impactful companies.",
+      "Tech-savvy individual with expertise in software development and digital transformation.",
+      "Creative thinker and problem solver. Passionate about user experience and design.",
+      "Business professional with a focus on strategy and growth. Love working with teams.",
+      "Technology enthusiast and early adopter. Always excited about the latest innovations.",
+      "Creative professional with a passion for design and user experience. Love creating beautiful things.",
+      "Business leader with expertise in strategy and operations. Focused on building great teams.",
+      "Tech professional with a background in software development. Always learning new technologies.",
+      "Creative individual with a passion for design and innovation. Love solving complex problems.",
+      "Business professional with expertise in marketing and growth. Focused on building brands.",
+      "Technology enthusiast and developer. Always excited about new programming languages and frameworks.",
+      "Creative professional with a background in graphic design. Love creating visual solutions.",
+      "Business leader with expertise in operations and strategy. Focused on building efficient processes.",
+      "Tech-savvy individual with a passion for data and analytics. Always looking for insights.",
+      "Creative thinker and designer. Passionate about user experience and interface design.",
+      "Business professional with expertise in sales and customer success. Love building relationships.",
+      "Technology enthusiast and full-stack developer. Always learning new technologies and frameworks.",
+      "Creative professional with a background in digital marketing. Love creating engaging content."
+    ]
+  }
+}
