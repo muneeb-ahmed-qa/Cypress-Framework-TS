@@ -1,0 +1,5 @@
+# This file ensures the reports directory is created
+# Reports will be generated in subdirectories:
+# - html/ - Mochawesome HTML reports
+# - junit/ - JUnit XML reports
+# - json/ - JSON reports for merging

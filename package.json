@@ -53,10 +53,31 @@
     "testing",
     "automation",
     "e2e",
-    "api-testing"
+    "typescript",
+    "page-object-model",
+    "api-testing",
+    "visual-regression",
+    "ci-cd",
+    "github-actions",
+    "junit",
+    "mochawesome",
+    "reporting",
+    "test-tagging",
+    "data-generation",
+    "password-encryption",
+    "intellisense",
+    "enterprise"
   ],
-  "author": "",
+  "author": "Advanced Cypress Testing Framework",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/cypress-advanced-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/cypress-advanced-framework/issues"
+  },
+  "homepage": "https://github.com/your-username/cypress-advanced-framework#readme",
   "devDependencies": {
     "@cypress/code-coverage": "^3.12.11",
     "@types/cypress": "^1.1.3",
