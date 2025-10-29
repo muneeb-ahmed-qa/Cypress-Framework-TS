@@ -1,5 +1,8 @@
 /**
  * API Helper utilities
+ * 
+ * @author Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
+ * @since 1.0.0
  */
 
 export class ApiHelper {

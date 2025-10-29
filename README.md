@@ -1,4 +1,4 @@
-# Advanced Cypress Testing Framework
+# Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
 
 A comprehensive, enterprise-grade Cypress testing framework showcasing advanced automation skills and best practices for Upwork clients.
 

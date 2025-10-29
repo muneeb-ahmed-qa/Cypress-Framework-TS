@@ -2,6 +2,10 @@ import { BasePage } from './BasePage';
 
 /**
  * Home Page Object Model
+ * 
+ * @author Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
+ * @version 1.0.0
+ * @since 1.0.0
  */
 export class HomePage extends BasePage {
   // Selectors

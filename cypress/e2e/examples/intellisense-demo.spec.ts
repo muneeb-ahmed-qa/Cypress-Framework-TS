@@ -54,15 +54,15 @@ describe('IntelliSense Demo', () => {
       email: 'john@example.com' 
     }); // IntelliSense shows fields parameter type: Record<string, string>
 
-    cy.scrollToElement('.footer') // IntelliSense shows return type: Chainable<JQuery<HTMLElement>>
-      .should('be.visible');
+    cy.scrollToElement('.footer'); // IntelliSense shows return type: Chainable<JQuery<HTMLElement>>
+    cy.get('.footer').should('be.visible');
 
     cy.shouldContainText('.title', 'Hello World'); // IntelliSense shows parameter types
 
     cy.waitForPageLoad(); // IntelliSense shows no parameters
 
-    cy.hoverWithWait('.menu-item') // IntelliSense shows return type
-      .should('be.visible');
+    cy.hoverWithWait('.menu-item'); // IntelliSense shows return type
+    cy.get('.menu-item').should('be.visible');
   });
 
   it('should demonstrate assertion commands with IntelliSense', () => {
@@ -77,7 +77,7 @@ describe('IntelliSense Demo', () => {
     cy.assertAll([
       () => cy.get('.element').should('be.visible'),
       () => cy.url().should('include', 'test')
-    ]); // IntelliSense shows assertions parameter type: Array<() => Cypress.Chainable<any>>
+    ]); // IntelliSense shows assertions parameter type: Array<() => Cypress.Chainable<unknown>>
   });
 
   it('should demonstrate data generation commands with IntelliSense', () => {
@@ -85,7 +85,7 @@ describe('IntelliSense Demo', () => {
     
     // Data generation with full type safety
     cy.generateUser({ count: 5, unique: true }) // IntelliSense shows GenerationOptions
-      .then((users: any[]) => { // IntelliSense shows return type
+      .then((users: Record<string, unknown>[]) => { // IntelliSense shows return type
         expect(users).to.have.length(5);
         users.forEach(user => {
           expect(user).to.have.property('email');
@@ -93,24 +93,24 @@ describe('IntelliSense Demo', () => {
       });
 
     cy.generateProduct({ count: 3, locale: 'en' }) // IntelliSense shows all options
-      .then((products: any[]) => {
+      .then((products: Record<string, unknown>[]) => {
         expect(products).to.have.length(3);
       });
 
     cy.generateOrder({ count: 2, seed: 12345 }) // IntelliSense shows seed option
-      .then((orders: any[]) => {
+      .then((orders: Record<string, unknown>[]) => {
         expect(orders).to.have.length(2);
       });
 
     // Generate and export with type safety
     cy.generateAndExport('user', 'test-users.json', { count: 10, unique: true })
-      .then((data: any[]) => { // IntelliSense shows return type
+      .then((data: Record<string, unknown>[]) => { // IntelliSense shows return type
         expect(data).to.have.length(10);
       });
 
     // Load generated data
     cy.loadGeneratedData('test-users.json')
-      .then((data: any[]) => { // IntelliSense shows return type
+      .then((data: Record<string, unknown>[]) => { // IntelliSense shows return type
         expect(data).to.be.an('array');
       });
   });

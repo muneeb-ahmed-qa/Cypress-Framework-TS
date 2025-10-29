@@ -197,7 +197,7 @@ describe('Users API Tests', () => {
 
     it('should extract nested data correctly', () => {
       cy.apiRequest('GET', '/users/1').then((response) => {
-        const address = ApiHelper.extractData<any>(response, 'address');
+        const address = ApiHelper.extractData<Record<string, unknown>>(response, 'address');
         expect(address).to.have.property('street');
         expect(address).to.have.property('city');
         expect(address).to.have.property('zipcode');

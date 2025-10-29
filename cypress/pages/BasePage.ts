@@ -1,6 +1,10 @@
 /**
  * Base Page Object Model class
  * All page objects should extend this class
+ * 
+ * @author Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
+ * @version 1.0.0
+ * @since 1.0.0
  */
 
 export abstract class BasePage {

@@ -1,6 +1,6 @@
-# Contributing to Advanced Cypress Testing Framework
+# Contributing to Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
 
-Thank you for your interest in contributing to the Advanced Cypress Testing Framework! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to the Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123! This document provides guidelines and information for contributors.
 
 ## 🤝 How to Contribute
 
@@ -245,4 +245,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Contributors who help improve this project
 - Community members who provide feedback and suggestions
 
-Thank you for contributing to the Advanced Cypress Testing Framework! 🚀
+Thank you for contributing to the Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123! 🚀

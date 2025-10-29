@@ -37,7 +37,7 @@ describe('Posts API Tests', () => {
         expect(response.body).to.be.an('array');
         
         // Verify all posts belong to the user
-        response.body.forEach((post: Record<string, any>) => {
+               response.body.forEach((post: Record<string, unknown>) => {
           expect(post.userId).to.eq(userId);
         });
       });

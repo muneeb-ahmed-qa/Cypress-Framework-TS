@@ -2,6 +2,10 @@ import { BasePage } from './BasePage';
 
 /**
  * Actions Page Object Model
+ * 
+ * @author Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
+ * @version 1.0.0
+ * @since 1.0.0
  */
 export class ActionsPage extends BasePage {
   // Selectors
@@ -55,28 +59,32 @@ export class ActionsPage extends BasePage {
    * Check checkbox
    */
   checkCheckbox(index: number = 0): Cypress.Chainable<void> {
-    return this.getElement(this.selectors.checkbox).eq(index).check();
+    this.getElement(this.selectors.checkbox).eq(index).check();
+    return cy.wrap(null);
   }
 
   /**
    * Select radio button
    */
   selectRadio(value: string): Cypress.Chainable<void> {
-    return this.getElement(this.selectors.radio).check(value);
+    this.getElement(this.selectors.radio).check(value);
+    return cy.wrap(null);
   }
 
   /**
    * Select from dropdown
    */
   selectFromDropdown(option: string): Cypress.Chainable<void> {
-    return this.getElement(this.selectors.selectDropdown).select(option);
+    this.getElement(this.selectors.selectDropdown).select(option);
+    return cy.wrap(null);
   }
 
   /**
    * Verify input is disabled
    */
   verifyInputDisabled(): Cypress.Chainable<void> {
-    return this.getElement(this.selectors.disabledInput).should('be.disabled');
+    this.getElement(this.selectors.disabledInput).should('be.disabled');
+    return cy.wrap(null);
   }
 
   /**

@@ -192,7 +192,7 @@ describe('Data Generation Tests', () => {
           expect(order.items.length).to.be.at.most(10);
           
           // Each item should have required fields
-          order.items.forEach((item: any) => {
+          order.items.forEach((item: Record<string, unknown>) => {
             expect(item).to.have.property('productId');
             expect(item).to.have.property('quantity');
             expect(item).to.have.property('price');
@@ -205,7 +205,7 @@ describe('Data Generation Tests', () => {
       cy.generateOrder({ count: 10 }).then((orders) => {
         orders.forEach(order => {
           // Calculate expected total from items
-          const itemsTotal = order.items.reduce((sum: number, item: any) => 
+          const itemsTotal = order.items.reduce((sum: number, item: Record<string, unknown>) => 
             sum + (item.price * item.quantity), 0
           );
           const expectedTotal = itemsTotal + order.shippingCost + order.tax - order.discount;

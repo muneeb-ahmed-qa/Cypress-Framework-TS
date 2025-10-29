@@ -3,6 +3,10 @@
 /**
  * Global type definitions for custom Cypress commands
  * This file provides IntelliSense support for all custom commands
+ * 
+ * @author Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
+ * @version 1.0.0
+ * @since 1.0.0
  */
 
 declare global {

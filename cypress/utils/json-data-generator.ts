@@ -1,6 +1,10 @@
 /**
  * JSON-based Test Data Generator
  * Generates realistic test data based on JSON templates and schemas
+ * 
+ * @author Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
+ * @version 1.0.0
+ * @since 1.0.0
  */
 
 import * as fs from 'fs';

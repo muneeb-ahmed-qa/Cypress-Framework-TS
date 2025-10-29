@@ -3,6 +3,10 @@
 /**
  * CLI Script for Generating Test Data
  * 
+ * @author Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
+ * @version 1.0.0
+ * @since 1.0.0
+ * 
  * Usage:
  *   node scripts/generate-test-data.js user --count 10 --output users.json
  *   node scripts/generate-test-data.js product --count 5 --unique

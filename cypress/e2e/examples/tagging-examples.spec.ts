@@ -81,6 +81,7 @@ describe('Test Tagging Examples', () => {
     it('should capture homepage screenshot', () => {
       cy.visual(); // Mark as visual test
       cy.visit('/');
+      cy.get('h1').should('be.visible'); // Assertion before screenshot
       cy.screenshot('homepage-visual-test');
     });
 
@@ -88,6 +89,7 @@ describe('Test Tagging Examples', () => {
       cy.tag('visual', 'responsive', 'mobile'); // Multiple custom tags
       cy.viewport('iphone-x');
       cy.visit('/');
+      cy.get('h1').should('be.visible'); // Assertion before screenshot
       cy.screenshot('homepage-mobile');
     });
   });
@@ -172,7 +174,6 @@ describe('Test Tagging Examples', () => {
       cy.flaky(); // Mark as flaky test
       // This test might fail due to timing issues
       cy.visit('/');
-      cy.wait(1000); // Artificial delay
       cy.get('h1').should('be.visible');
     });
 
@@ -198,7 +199,7 @@ describe('Test Tagging Examples', () => {
       cy.tag('slow', 'comprehensive'); // Custom tags
       // Simulate comprehensive testing
       cy.wrap(Array.from({ length: 100 }, (_, i) => i)).then((data) => {
-        data.forEach(item => {
+        data.forEach((item: number) => {
           expect(item).to.be.a('number');
         });
       });

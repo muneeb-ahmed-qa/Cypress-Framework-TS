@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Advanced Cypress Testing Framework will be documented in this file.
+All notable changes to the Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123 will be documented in this file.
 
 ## [1.0.0] - 2024-10-29
 

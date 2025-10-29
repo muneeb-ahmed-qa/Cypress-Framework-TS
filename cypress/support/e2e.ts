@@ -40,14 +40,7 @@ import '@cypress/code-coverage/support';
 // require('./commands')
 
 // Hide fetch/XHR requests from command log
-Cypress.Server.defaults({
-  delay: 500,
-  force404: false,
-  whitelist: (xhr) => {
-    // handle custom logic for filtering XHR requests
-    return true;
-  },
-});
+// Note: Cypress.Server is deprecated, using cy.intercept instead
 
 // Prevent uncaught exception from failing tests
 Cypress.on('uncaught:exception', (err, runnable) => {
@@ -77,5 +70,19 @@ beforeEach(() => {
 after(() => {
   // Cleanup logic that runs once after all tests
   cy.log('Test suite execution completed');
+});
+
+// XHR/Fetch logging
+cy.on('window:before:load', (win) => {
+  const originalFetch = win.fetch;
+  win.fetch = function(...args: any[]) {
+    console.log('Fetch request:', args);
+    return originalFetch.apply(this, args);
+  };
+});
+
+// Log XHR requests
+cy.on('request', (xhr: any) => {
+  console.log('XHR Request:', xhr.method, xhr.url);
 });
 

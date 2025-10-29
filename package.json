@@ -1,7 +1,7 @@
 {
   "name": "cypress-advanced-framework",
   "version": "1.0.0",
-  "description": "Advanced Cypress Testing Framework showcasing professional automation skills",
+  "description": "Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123 showcasing professional automation skills",
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
@@ -68,7 +68,7 @@
     "intellisense",
     "enterprise"
   ],
-  "author": "Advanced Cypress Testing Framework",
+  "author": "Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123",
   "license": "MIT",
   "repository": {
     "type": "git",
