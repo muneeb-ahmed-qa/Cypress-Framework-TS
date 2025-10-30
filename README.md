@@ -557,9 +557,15 @@ npm run format
 
 MIT License - feel free to use this framework for your projects.
 
-## 👤 Author
+👨‍💻 Author
+Muneeb Ahmed - https://www.linkedin.com/in/muneeb-ahmed-0123
 
-Created to showcase advanced Cypress automation skills for Upwork clients.
+GitHub: https://github.com/muneeb-ahmed-qa
+LinkedIn: https://www.linkedin.com/in/muneeb-ahmed-0123
+📞 Contact
+For questions or collaboration opportunities, please reach out via:
+
+LinkedIn: https://www.linkedin.com/in/muneeb-ahmed-0123
 
 ---
 
